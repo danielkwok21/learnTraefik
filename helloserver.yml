@@ -1,6 +1,0 @@
-services:
-  helloserver:
-    image: helloserver:auth
-    labels:
-      - "traefik.http.routers.helloserver.rule=Host(`helloserver.localhost`)"
-      - "traefik.http.services.helloserver.loadbalancer.server.port=80"
