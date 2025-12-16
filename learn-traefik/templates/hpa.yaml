@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "learnTraefik.fullname" . }}
+  name: {{ include "learn-traefik.fullname" . }}
   labels:
-    {{- include "learnTraefik.labels" . | nindent 4 }}
+    {{- include "learn-traefik.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "learnTraefik.fullname" . }}
+    name: {{ include "learn-traefik.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
