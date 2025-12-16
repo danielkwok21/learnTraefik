@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "learnTraefik.fullname" . }}
+  name: {{ include "learn-traefik.fullname" . }}
   labels:
-    {{- include "learnTraefik.labels" . | nindent 4 }}
+    {{- include "learn-traefik.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "learnTraefik.selectorLabels" . | nindent 4 }}
+    {{- include "learn-traefik.selectorLabels" . | nindent 4 }}
