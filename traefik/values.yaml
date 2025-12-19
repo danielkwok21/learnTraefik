@@ -1,6 +1,7 @@
+# reference: https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml#L352
 providers:
   file:
-    directory: "/config/traefik-dynamic.yaml"
+    filename: "/config/traefik-dynamic.yaml"
     watch: true
 
 volumes:
