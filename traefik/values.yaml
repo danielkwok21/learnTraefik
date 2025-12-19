@@ -1,0 +1,13 @@
+providers:
+  file:
+    directory: "/config/traefik-dynamic.yaml"
+    watch: true
+
+volumes:
+  - name: traefik-dynamic-conf
+    mountPath: "/config"
+    type: configMap
+
+additionalArguments:
+  - "--providers.file.filename=/config/traefik-dynamic.yaml"
+  - "--providers.file.watch=true"
