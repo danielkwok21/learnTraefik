@@ -61,7 +61,7 @@ ingress:
   enabled: true
   className: ""
   annotations: 
-    traefik.ingress.kubernetes.io/router.middlewares: this_is_my_custom_middleware@file
+    traefik.ingress.kubernetes.io/router.middlewares: this_is_my_custom_middleware@file,test_auth@file
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
