@@ -13,7 +13,7 @@ curl -X POST http://localhost:3000 \
 ```shell
 docker build -t auth:latest .
 
-docker run auth:latest -p 3000:3000
+docker run -p 3000:80 auth:latest 
 
 # expect 401
 curl -X POST http://localhost:3000

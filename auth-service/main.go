@@ -28,6 +28,6 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/login", loginHandler)
 
-	log.Println("listening on :3000")
-	log.Fatal(http.ListenAndServe(":3000", nil))
+	log.Println("listening on :80")
+	log.Fatal(http.ListenAndServe(":80", nil))
 }

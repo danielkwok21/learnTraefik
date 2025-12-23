@@ -1,0 +1,11 @@
+http:
+  middlewares:
+    this_is_my_custom_middleware:
+      headers:
+        customRequestHeaders:
+          X-Dummy-Request-Header: "traefik"
+        customResponseHeaders:
+          X-Dummy-Response-Header: "traefik"
+    test_auth:
+      forwardAuth:
+        address: "http://auth.default.svc.cluster.local/login"
