@@ -27,6 +27,9 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/login", loginHandler)
+	http.HandleFunc("/", func (w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+	})
 
 	log.Println("listening on :80")
 	log.Fatal(http.ListenAndServe(":80", nil))

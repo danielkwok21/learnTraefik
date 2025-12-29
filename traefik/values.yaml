@@ -1,9 +1,4 @@
 # reference: https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml#L352
-providers:
-  file:
-    filename: "/config/traefik-dynamic.yaml"
-    watch: true
-
 volumes:
   - name: traefik-dynamic-conf
     mountPath: "/config"
