@@ -1,8 +1,0 @@
-
-services:
-  auth:
-    container_name: auth
-    image: auth:latest
-    pull_policy: never
-    labels:
-      - "traefik.http.routers.auth.rule=Host(`auth.localhost`)"
