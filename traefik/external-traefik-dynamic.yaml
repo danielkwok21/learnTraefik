@@ -1,0 +1,5 @@
+http:
+  middlewares:
+    test_auth:
+      forwardAuth:
+        address: "http://auth.default.svc.cluster.local/login"
