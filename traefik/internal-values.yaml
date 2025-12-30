@@ -1,0 +1,16 @@
+# reference: https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml#L352
+providers:
+  kubernetesIngress:
+    ingressClass: "learn-traefik-traefik-internal"
+
+volumes:
+  - name: internal-traefik-dynamic-config # name of the config map we wanna mount into /config
+    mountPath: "/config"
+    type: configMap
+
+additionalArguments:
+  - "--providers.file.filename=/config/internal-traefik-dynamic.yaml"
+  - "--providers.file.watch=true"
+
+service:
+  type: ClusterIP

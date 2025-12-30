@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  annotations:
+    ingressclass.kubernetes.io/is-default-class: "false"
+  name: learn-traefik-traefik-internal
+spec:
+  controller: traefik.io/ingress-controller
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  annotations:
+    ingressclass.kubernetes.io/is-default-class: "false"
+  name: learn-traefik-traefik-external
+spec:
+  controller: traefik.io/ingress-controller
+  
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: learn-traefik-ingress-external
+  annotations:
+    traefik.ingress.kubernetes.io/router.middlewares: test_auth@file
+spec:
+  ingressClassName: learn-traefik-traefik-external
+  rules:
+    - host: whoami.localhost
+      http:
+        paths:
+          - backend:
+              service:
+                name: internal-traefik
+                port: 
+                  number: 80
+            path: /
+            pathType: Prefix
