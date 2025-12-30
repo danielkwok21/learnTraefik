@@ -5,5 +5,5 @@ volumes:
     type: configMap
 
 additionalArguments:
-  - "--providers.file.filename=/config/traefik-dynamic.yaml"
+  - "--providers.file.filename=/config/config.yaml"
   - "--providers.file.watch=true"
